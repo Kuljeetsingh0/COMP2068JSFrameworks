@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-md-8.offset-md-2
+        .contact-form
+          h1.text-center= title
+          p.lead.text-center ADD STUDENTS 
+
+          // Stylish contact form
+          form(action="/contact/submit", method="post")
+            .form-group
+              label(for="StudentNumber") Student Number
+              input.form-control(type="text", name="StudentNumber", placeholder="Enter your student number", required)
+
+            .form-group
+              label(for="FirstName") First Name
+              input.form-control(type="text", name="FirstName", placeholder="Enter your first name", required)
+
+            .form-group
+              label(for="LastName") Last Name
+              input.form-control(type="text", name="LastName", placeholder="Enter your last name", required)
+
+            .form-group
+              label(for="Email") Email
+              input.form-control(type="email", name="Email", placeholder="Enter your email address", required)
+
+            .form-group.text-center
+              input.btn.btn-primary(type="submit", value="Submit")
