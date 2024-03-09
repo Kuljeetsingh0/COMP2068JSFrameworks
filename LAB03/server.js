@@ -1,8 +1,12 @@
+//Import the Connect and URL packages
 const connect = require('connect');
 const url = require('url');
 
 const app = connect();
-
+/*calculate function that parses the URL for 3 parameters: 
+method as a string
+x as a number
+y as a number*/
 function calculate(req, res) {
     const queryParams = new URL('http://localhost:3000' + req.url).searchParams;
     const method = queryParams.get('method');
@@ -24,9 +28,11 @@ function calculate(req, res) {
             result = x / y;
             break;
         default:
+            //show an error message
             res.end('Error: Unsupported method. Please use add, subtract, multiply, or divide.');
             return;
     }
+    // this format: x [method] y = [result]
     res.end(${x} $
         {method.replace('multiply',
          '*').replace('divide',
