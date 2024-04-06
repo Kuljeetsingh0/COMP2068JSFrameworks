@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Income</title>
+            <link rel="stylesheet" href="/stylesheets/addincome.css">
+
+   
+</head>
+<body>
+    {{> header}} 
+<div class="container">
+    <div class="row header">
+      <h1>Add Income &nbsp;</h1>
+     
+    </div>
+    <div class="row body">
+      <form action="/addIncome" method="post">
+        <ul>
+          
+          <li>
+            <p class="left">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </p>
+            <p class="pull-right">
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" required>
+            </p>
+          </li>
+          
+          <li>
+            <p>
+                <label for="source">Source</label>
+                <input type="text" name="source" required>
+            </p>
+          </li>        
+          <li><div class="divider"></div></li>
+          <li>
+            <label for="description">Description</label>
+            <textarea name="description" rows="8" cols="80" required></textarea>
+          </li>
+          
+          <li>
+            <input class="btn btn-submit" type="submit" value="Add Income" />
+           
+          </li>
+          
+        </ul>
+      </form>  
+    </div>
+  </div>
+   {{> footer}}
+</body>
+</html>

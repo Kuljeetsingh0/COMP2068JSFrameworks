@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+   <style>
+      /* Navbar styling */
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #009688; /* Same color as navbar */
+    padding: 10px;
+}
+
+.logo h1 {
+   color: #FFF;
+    font-size: 24px;
+    margin: 0px;
+    position: relative;
+    left: 34px;
+}
+
+
+.logo span {
+    color: #FFF; /* Text color for the word "tracker" */
+}
+
+.menu a {
+    color: #FFF; /* Text color for menu items */
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    position: relative;
+}
+
+.menu a:before,
+.menu a:after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.menu a:before {
+    top: 0;
+    transform: translateY(-10px);
+}
+
+.menu a:after {
+    bottom: 0;
+    transform: translateY(10px);
+}
+
+.menu a:hover:before,
+.menu a:hover:after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+   </style>
+</head>
+<body>
+  
+    <div class="navbar teal">
+      <div class="logo">
+        <h1>Expense <span>tracker</span></h1>
+      </div>
+      <div class="menu">
+        <a href="index">HOME</a>
+        <a href="addExpense">AddExpense</a>
+        <a href="expenses">ShowExpenses</a>
+        <a href="addIncome">AddIncome</a>
+        <a href="income">ShowIncome</a>
+      </div>
+    </div>
+    
+</body>
+</html>

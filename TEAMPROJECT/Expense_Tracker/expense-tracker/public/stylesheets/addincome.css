@@ -1,0 +1,87 @@
+/* styles.css */
+
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting up root variables for colors */
+:root {
+    --white: #fff;
+    --grey: #ccc;
+    --dark-grey: #555;
+    --blue: #4f6fad;
+    --pink: #ee9cb4;
+}
+
+/* Body styles */
+body {
+    /* background-color: var(--white); */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Container styles */
+.container {
+    max-width: 510px;
+    min-width: 324px;
+    margin: 50px auto 0;
+    background-color: var(--white);
+    border: 1px solid var(--grey);
+    border-bottom: 3px solid var(--grey);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+h1 {
+    color: var(--blue);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+    max-width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="submit"] {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

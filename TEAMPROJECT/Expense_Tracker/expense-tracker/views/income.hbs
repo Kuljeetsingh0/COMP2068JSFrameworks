@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/income.css"> <!-- Link to your CSS file -->
+
+    <title>All Incomes</title>
+    <style>
+        /* CSS for the download button */
+        .download-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    {{> header}} <!-- Assuming you have a header partial -->
+    <div class="container">
+        <div class="content">
+            <h1>All Incomes</h1>
+            <a href="/income/download" class="download-btn">Download CSV</a> <!-- Add download button -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Source</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each incomes}}
+                    <tr>
+                        <td>{{this.date}}</td>
+                        <td>{{this.amount}}</td>
+                        <td>{{this.source}}</td> <!-- Display source field -->
+                        <td>{{this.description}}</td>
+                        <td>
+                            <!-- Update button -->
+                            <form action="/updateincome/{{this._id}}" method="GET">
+                                <button type="submit">Update</button>
+                            </form>
+                            <!-- Delete button -->
+                            <form action="/income/{{this._id}}/delete" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{> footer}} <!-- Assuming you have a footer partial -->
+</body>
+</html>
