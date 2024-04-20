@@ -3,7 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const exphbs = require('express-handlebars');
-const createError = require('http-errors'); // Add this line to require createError
+const createError = require('http-errors'); 
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');

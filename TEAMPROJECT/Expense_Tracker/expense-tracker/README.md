@@ -2,6 +2,13 @@
 
 Expense Tracker is a web application built with Node.js, Express, MongoDB/Mongoose, and HBS views. It allows users to manage their expenses and income, as well as provides authentication functionality for user registration and login. Additionally, users can download their expense and income data in CSV format.
 
+# TEAM MEMBER
+KIRAN 
+KULJEET
+KARAN
+RAMAN
+ZAHAR
+
 ## Features
 1. **Authentication**
    - Users can register for a new account.
