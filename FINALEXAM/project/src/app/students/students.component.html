@@ -1,0 +1,45 @@
+
+<div class="container mt-5">
+    <h2>Students List</h2>
+    <button class="btn btn-primary mb-2" (click)="initializeStudent()">Create New Student</button>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Enrollment Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.enrollmentDate }}</td>
+                <td>
+                    <button class="btn btn-info" (click)="selectStudent(student)">Update</button>
+                    <button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+ >
+    <form (ngSubmit)="onSubmit()" *ngIf="selectedStudent">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="selectedStudent.name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="course">Course:</label>
+            <input type="text" class="form-control" id="course" required [(ngModel)]="selectedStudent.course" name="course">
+        </div>
+        <div class="form-group">
+            <label for="enrollmentDate">Enrollment Date:</label>
+            <input type="date" class="form-control" id="enrollmentDate" required [(ngModel)]="selectedStudent.enrollmentDate" name="enrollmentDate">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
